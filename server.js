@@ -1,10 +1,14 @@
 
 const app = require('./app')
 const mongoose = require('mongoose')
-const port = 5000;
 
+require('dotenv').config();
 // connecting the mongodb server to the app 
-DATABASE='mongodb+srv://actual:actual123123@tour.h9z7qkp.mongodb.net/bookstore'
+const port = process.env.PORT;
+const databaseUrl = process.env.DATABASE_URL;
+
+
+DATABASE=databaseUrl
 mongoose
   .connect(DATABASE, {
     useNewUrlParser: true,

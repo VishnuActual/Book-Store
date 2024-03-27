@@ -1,9 +1,9 @@
 const User = require("./../models/userModel")
 const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
-
+const apiKey = process.env.API_KEY;
 function createSendToken (req,res,id){
-  let jwtSecretKey = "my_secret_key_is_very_simple";
+  let jwtSecretKey = apiKey;
     let data = {
       time: Date(),
       userId: id,
